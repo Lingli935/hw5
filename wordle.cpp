@@ -29,13 +29,13 @@ std::set<std::string> wordle(
 	// std::string floattingCopy = floating;
 	// std::set<std::string> dictCopy = dict;
     std::set<std::string> possibleGusse;
-     findWord(in, floating, dict, 0, length, &possibleGusse);
+     findWord(in, floating, dict, 0, length, possibleGusse);
     return possibleGusse;
 }
 
 // Define any helper functions here
 void findWord(const std::string& in, const std::string& floating, const std::set<std::string>& dict, 
-              int index, int dashes, std::set<std::string>& possibleGusse )
+              int index, int length, std::set<std::string>& possibleGusse )
 {   
 
         if(index == in.size())
@@ -46,7 +46,6 @@ void findWord(const std::string& in, const std::string& floating, const std::set
 			 }
 			 return;
 		}
-}
     
      if (in[index - 1] != '-')
     {
@@ -107,7 +106,7 @@ void findWord(const std::string& in, const std::string& floating, const std::set
             {
                 currentIn = in;
                 currentIn[index - 1] = (char)(i + 97);
-                findWord(currentIn, currentFloating, dict, index + 1, length, possibleGusse);
+                findWord(currentIn, floating, dict, index + 1, length, possibleGusse);
             }
         }
         currentIn[index - 1] = '-';

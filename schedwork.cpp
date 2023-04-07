@@ -19,7 +19,7 @@ using namespace std;
 static const Worker_T INVALID_ID = (unsigned int)-1;
 
 
-// Add prototypes for any helper functions here
+//Add prototypes for any helper functions here
 bool scheduleH(const AvailabilityMatrix& avail, const size_t maxShifts, DailySchedule& sched, 
 std::vector<size_t> shiftCount);
 bool specialRow(const DailySchedule& avail, int r );
